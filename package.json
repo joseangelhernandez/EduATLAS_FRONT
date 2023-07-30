@@ -3,6 +3,7 @@
   "author": "Jose Angel Hernandez",
   "version": "4.2.0",
   "description": "Javascript Version",
+  "proxy": "https://api.mapbox.com",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
