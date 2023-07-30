@@ -1,0 +1,86 @@
+import _mock from '../_mock';
+
+// ----------------------------------------------------------------------
+
+export const countries = [
+  {
+    timezones: ['America/Aruba'],
+    latlng: [18.851191, -70.372641],
+    name: 'Aruba',
+    country_code: 'AW',
+    capital: 'Oranjestad',
+    photo: _mock.image.cover(1),
+  },
+  {
+    timezones: ['Asia/Kabul'],
+    latlng: [18.837220, -70.352662],
+    name: 'Afghanistan',
+    country_code: 'AF',
+    capital: 'Kabul',
+    photo: _mock.image.cover(2),
+  },
+  {
+    timezones: ['Africa/Luanda'],
+    latlng: [18.841769, -70.442673],
+    name: 'Angola',
+    country_code: 'AO',
+    capital: 'Luanda',
+    photo: _mock.image.cover(3),
+  },
+  {
+    timezones: ['Pacific/Efate'],
+    latlng: [-16, 167],
+    name: 'Vanuatu',
+    country_code: 'VU',
+    capital: 'Port Vila',
+    photo: _mock.image.cover(4),
+  },
+  {
+    timezones: ['Pacific/Wallis'],
+    latlng: [-13.3, -176.2],
+    name: 'Wallis and Futuna',
+    country_code: 'WF',
+    capital: 'Mata-Utu',
+    photo: _mock.image.cover(5),
+  },
+  {
+    timezones: ['Pacific/Apia'],
+    latlng: [-13.58333333, -172.33333333],
+    name: 'Samoa',
+    country_code: 'WS',
+    capital: 'Apia',
+    photo: _mock.image.cover(6),
+  },
+  {
+    timezones: ['Asia/Aden'],
+    latlng: [15, 48],
+    name: 'Yemen',
+    country_code: 'YE',
+    capital: "Sana'a",
+    photo: _mock.image.cover(7),
+  },
+  {
+    timezones: ['Africa/Johannesburg'],
+    latlng: [-29, 24],
+    name: 'South Africa',
+    country_code: 'ZA',
+    capital: 'Pretoria',
+    photo: _mock.image.cover(8),
+  },
+  {
+    timezones: ['Africa/Lusaka'],
+    latlng: [-15, 30],
+    name: 'Zambia',
+    country_code: 'ZM',
+    capital: 'Lusaka',
+    photo: _mock.image.cover(9),
+  },
+  {
+    timezones: ['Africa/Harare'],
+    latlng: [-20, 30],
+    name: 'Zimbabwe',
+    country_code: 'ZW',
+    capital: 'Harare',
+    photo: _mock.image.cover(10),
+  },
+];
