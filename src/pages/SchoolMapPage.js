@@ -46,7 +46,7 @@ const THEMES = {
 };
 
 const baseSettings = {
-  mapboxAccessToken: MAP_API,
+  mapboxAccessToken: 'pk.eyJ1Ijoiam9zZTAzMDgiLCJhIjoiY2xrb3liempoMTNjMzNrcGNtZmNnd2o4dyJ9.zIgdIXFTGMD5uUG5DseVvQ',
   minZoom: 1,
 };
 
