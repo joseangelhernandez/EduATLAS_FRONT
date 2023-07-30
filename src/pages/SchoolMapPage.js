@@ -145,6 +145,8 @@ export default function ComponentsOverviewPage() {
   const handleInputValueCentro = (newInputValue) => {
     setInputValueCentro(newInputValue);
   }
+
+  useEffect(()=>console.log(baseSettings.mapboxAccessToken),[])
   return (
     <>
       <Helmet>

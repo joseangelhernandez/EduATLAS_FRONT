@@ -51,7 +51,6 @@ function MapChangeTheme({ data, selectTheme, themes, ...other }) {
         }
       }))
     })
-    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
