@@ -382,16 +382,16 @@ const useGetEvents = () => {
 // ----------------------------------------------------------------------
 
 function applyFilter({ inputData, filterEventColor, filterStartDate, filterEndDate, isError }) {
-  const stabilizedThis = inputData.map((el, index) => [el, index]);
+  const stabilizedThis = inputData?.map((el, index) => [el, index]);
 
-  inputData = stabilizedThis.map((el) => el[0]);
+  inputData = stabilizedThis?.map((el) => el[0]);
 
   if (filterEventColor.length) {
-    inputData = inputData.filter((event) => filterEventColor.includes(event.color));
+    inputData = inputData?.filter((event) => filterEventColor.includes(event.color));
   }
 
   if (filterStartDate && filterEndDate && !isError) {
-    inputData = inputData.filter(
+    inputData = inputData?.filter(
       (event) =>
         fTimestamp(event.start) >= fTimestamp(filterStartDate) &&
         fTimestamp(event.end) <= fTimestamp(filterEndDate)
