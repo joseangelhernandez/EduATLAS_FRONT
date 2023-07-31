@@ -25,9 +25,9 @@ const navConfig = [
     children: [
       {
         items: [
-          { title: 'About us', path: PATH_PAGE.about },
-          { title: 'Contact us', path: PATH_PAGE.contact },
-          { title: 'FAQs', path: PATH_PAGE.faqs },
+          { title: 'Sobre EduATLAS', path: PATH_PAGE.comingSoon },
+          { title: 'Contáctanos', path: PATH_PAGE.comingSoon },
+          { title: 'Preguntas Frecuentes', path: PATH_PAGE.comingSoon },
         ],
       }
     ],

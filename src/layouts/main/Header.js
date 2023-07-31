@@ -60,7 +60,6 @@ export default function Header() {
 
       });
     };
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -74,6 +73,7 @@ export default function Header() {
   return (
     <AppBar item ref={carouselRef} color="transparent" 
       sx={{ boxShadow: 0, 
+      ...(!isHome && {position: 'absolute'}),
       ...(isDesktop ? {} : { zIndex: 2 }),
       ...(isHome && (isOffset ? { mt: 20 - scrollOffset } : { mt: 20 })),
        }}
@@ -119,7 +119,7 @@ export default function Header() {
         
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
           <Logo />
-
+          <Label color="success"> v1.0015 </Label>
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} offset={!isHome ? 1.5 : scrollOffset}/>}

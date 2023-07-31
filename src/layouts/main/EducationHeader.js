@@ -92,7 +92,7 @@ export default function EducationHeader() {
           />
         </Search>
         <Typography variant="body2" sx={{pt: 1.8, pl: 1}}>
-          Siguenos | Facebook | Instagram | Youtube
+          República Dominicana
         </Typography>
       </Grid>
     </Grid>

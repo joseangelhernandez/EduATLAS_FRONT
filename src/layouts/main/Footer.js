@@ -9,32 +9,33 @@ import { PATH_PAGE } from '../../routes/paths';
 // _mock
 import { _socials } from '../../_mock/arrays';
 // components
-import Logo from '../../components/logoEducacion';
+import Logo from '../../components/logo-gobierno/logoEducacionOficial';
+import LogoHome from '../../components/logoEducacion'
 import Iconify from '../../components/iconify';
 
 // ----------------------------------------------------------------------
 
 const LINKS = [
   {
-    headline: 'Minimal',
+    headline: 'EduATLAS',
     children: [
-      { name: 'About us', href: PATH_PAGE.about },
-      { name: 'Contact us', href: PATH_PAGE.contact },
-      { name: 'FAQs', href: PATH_PAGE.faqs },
+      { name: 'Sobre EduATLAS', href: PATH_PAGE.comingSoon },
+      { name: 'Contáctanos', href: PATH_PAGE.comingSoon },
+      { name: 'Preguntas Frecuentes', href: PATH_PAGE.comingSoon },
     ],
   },
   {
     headline: 'Legal',
     children: [
-      { name: 'Terms and Condition', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
+      { name: 'Términos y condiciones', href: '#' },
+      { name: 'Política de Privacidad', href: '#' },
     ],
   },
   {
-    headline: 'Contact',
+    headline: 'Contacto',
     children: [
-      { name: 'support@minimals.cc', href: '#' },
-      { name: 'Los Angeles, 359  Hidden Valley Road', href: '#' },
+      { name: 'eduatlas@minerd.gob.do', href: '#' },
+      { name: 'Av. Máximo Gómez No.2, Distrito Nacional, República Dominicana', href: '#' },
     ],
   },
 ];
@@ -65,7 +66,7 @@ export default function Footer() {
       }}
     >
       <Container sx={{pb: 5}}>
-        <Logo sx={{ mb: 1, mx: 'auto' }} />
+        {isHome ? <LogoHome sx={{ mb: 1, mx: 'auto' }}/> : <Logo sx={{ mb: 1, mx: 'auto' }} />}
     
         <Typography variant="caption" color="white" component="div">
           © Todos los derechos reservados
@@ -106,8 +107,8 @@ export default function Footer() {
 
           <Grid item xs={8} md={3}>
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              The starting point for your next project with Minimal UI Kit, built on the newest
-              version of Material-UI ©, ready to be customized to your style.
+              EduAtlas, potenciando el futuro de la educación. Versión de prototipo v1.0015.
+              EduAtlas es una innovadora plataforma digital dedicada a transformar la educación dominicana. 
             </Typography>
 
             <Stack
@@ -169,7 +170,7 @@ export default function Footer() {
             textAlign: { xs: 'center', md: 'left' },
           }}
         >
-          © 2021. All rights reserved
+          © 2023. Todos los derechos reservados.
         </Typography>
       </Container>
     </Box>
