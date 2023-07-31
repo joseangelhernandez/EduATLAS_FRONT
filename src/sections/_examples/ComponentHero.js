@@ -57,6 +57,9 @@ export default function ComponentHero() {
             Busca los cupos disponibles, características de las escuelas y más
               <br /> de forma sencilla y amigable.
             </Typography>
+            <Typography sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
+              <br /> <strong>Nota: </strong>los campos de búsqueda y los checkbox especiales solo están para fines de maquetación en esta versión de EduATLAS.
+            </Typography>
           </m.div>
         </Stack>
 
