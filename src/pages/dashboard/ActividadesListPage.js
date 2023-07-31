@@ -569,7 +569,7 @@ function applyFilter({
   filterStartDate, 
   filterEndDate
 }) {
-  const stabilizedThis = inputData.map((el, index) => [el, index]);
+  const stabilizedThis = inputData?.map((el, index) => [el, index]);
 
   stabilizedThis.sort((a, b) => {
     const order = comparator(a[0], b[0]);
@@ -581,35 +581,35 @@ function applyFilter({
 
   if(filterPor === 'Tipo de actividad'){
     if (filterName) {
-      inputData = inputData.filter(
+      inputData = inputData?.filter(
         (actividad) => actividad.tipo_actividad.toLowerCase().indexOf(filterName.toLowerCase()) !== -1
       );
     }
   }else if(filterPor === 'Actividad'){
     if (filterName) {
-      inputData = inputData.filter(
+      inputData = inputData?.filter(
         (actividad) => actividad.actividad.toLowerCase().indexOf(filterName.toLowerCase()) !== -1
       );
     };
   }else if(filterPor === 'Responsable'){
     if (filterName) {
-      inputData = inputData.filter(
+      inputData = inputData?.filter(
         (actividad) => actividad.responsable.toLowerCase().indexOf(filterName.toLowerCase()) !== -1
       );
     }
   }
 
   if (filterStatus === 'PRÓXIMAS') {
-    inputData = inputData.filter((actividad) => moment(actividad.fecha_final).format('DD-MMM-YYYY') > moment(Date.now()).format('DD-MMM-YYYY') 
+    inputData = inputData?.filter((actividad) => moment(actividad.fecha_final).format('DD-MMM-YYYY') > moment(Date.now()).format('DD-MMM-YYYY') 
     || moment(actividad.fecha_final).format('DD-MMM-YYYY') === moment(Date.now()).format('DD-MMM-YYYY'));
   }else if(filterStatus === 'PASADAS'){
-    inputData = inputData.filter((actividad) => moment(actividad.fecha_final).format('DD-MMM-YYYY') < moment(Date.now()).format('DD-MMM-YYYY'));
+    inputData = inputData?.filter((actividad) => moment(actividad.fecha_final).format('DD-MMM-YYYY') < moment(Date.now()).format('DD-MMM-YYYY'));
   }else if(filterStatus === 'NO EJECUTADAS'){
-    inputData = inputData.filter((actividad) => actividad.ejecutada === false)
+    inputData = inputData?.filter((actividad) => actividad.ejecutada === false)
   };
 
   if (filterStartDate && filterEndDate) {
-    inputData = inputData.filter(
+    inputData = inputData?.filter(
       (actividad) =>
         moment(actividad.fecha_inicio).format('DD-MM-YYYY') >= moment(filterStartDate).format('DD-MM-YYYY') &&
         moment(actividad.fecha_final).format('DD-MM-YYYY') <= moment(filterEndDate).format('DD-MM-YYYY')

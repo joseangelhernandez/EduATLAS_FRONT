@@ -28,7 +28,7 @@ export default function MailNav({ items, openNav, onOpenCompose, onCloseNav }) {
 
   const isDesktop = useResponsive('up', 'md');
 
-  const isLoading = !items.length;
+  const isLoading = !items?.length;
 
   useEffect(() => {
     if (openNav) {

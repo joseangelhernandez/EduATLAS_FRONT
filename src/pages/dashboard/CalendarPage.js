@@ -370,10 +370,11 @@ const useGetEvents = () => {
     getAllEvents();
   }, [getAllEvents]);
 
-  const events = data.map((event) => ({
+  const events = data?.map((event) => ({
     ...event,
     textColor: event.color,
   }));
+  
 
   return events;
 };
