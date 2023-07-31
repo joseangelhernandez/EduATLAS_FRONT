@@ -202,7 +202,11 @@ export default function ActividadesListPage() {
 
   async function handleData() {
     const data = await fetchData();
-    setTableData(data);
+
+    if(data != null){
+      setTableData(data);
+    }
+
   }
 
   useEffect(()=>{

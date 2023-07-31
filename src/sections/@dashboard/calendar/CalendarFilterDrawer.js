@@ -153,7 +153,7 @@ export default function CalendarFilterDrawer({
           fontWeight: 'fontWeightMedium',
         }}
       >
-        Actividades ({events.length})
+        Actividades ({events?.length})
       </Typography>
 
       <Scrollbar sx={{ height: 1 }}>

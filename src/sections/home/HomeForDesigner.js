@@ -81,7 +81,7 @@ export default function HomeForDesigner() {
             </Grid>
 
             <Grid item md={6}>
-              <StyledContent src="/assets/images/home/for_designer.jpg" variants={varFade().in} />
+              <StyledContent src="/assets/images/home/tomaDecisionesAnaliticas.png" variants={varFade().in} />
             </Grid>
           </Grid>
         </Container>
