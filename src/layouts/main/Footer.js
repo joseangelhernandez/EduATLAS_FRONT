@@ -2,6 +2,8 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, Grid, Link, Stack, Divider, Container, Typography, IconButton } from '@mui/material';
+// hooks
+import useResponsive from '../../hooks/useResponsive';
 // utils
 import { bgGradient } from '../../utils/cssStyles';
 // routes
@@ -11,6 +13,7 @@ import { _socials } from '../../_mock/arrays';
 // components
 import Logo from '../../components/logo-gobierno/logoEducacionOficial';
 import LogoHome from '../../components/logoEducacion'
+import LogoResponsive from '../../components/logoEducacionResponsive'
 import Iconify from '../../components/iconify';
 
 // ----------------------------------------------------------------------
@@ -49,6 +52,8 @@ export default function Footer() {
 
   const isHome = pathname === '/';
 
+  const isDesktop = useResponsive('up', 'md');
+
   const simpleFooter = (
     <Box
       component="footer"
@@ -66,7 +71,9 @@ export default function Footer() {
       }}
     >
       <Container sx={{pb: 5}}>
-        {isHome ? <LogoHome sx={{ mb: 1, mx: 'auto' }}/> : <Logo sx={{ mb: 1, mx: 'auto' }} />}
+        {isHome && <LogoHome sx={{ mb: 1, mx: 'auto' }}/> }
+
+        {!isHome && !isDesktop && <LogoResponsive sx={{ mb: 1, mx: 'auto' }}/>}
     
         <Typography variant="caption" color="white" component="div">
           © Todos los derechos reservados
@@ -102,7 +109,7 @@ export default function Footer() {
           }}
         >
           <Grid item xs={12} sx={{ mb: 3 }}>
-            <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
+            {isDesktop ? <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} /> : <LogoResponsive sx={{ mb: 1, mx: 'auto' }}/>}
           </Grid>
 
           <Grid item xs={8} md={3}>
