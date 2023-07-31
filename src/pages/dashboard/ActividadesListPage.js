@@ -77,8 +77,13 @@ const TABLE_HEAD = [
 ];
 
 async function fetchData() {
-  const response = await axios.get('/api/ACTIVIDADES/');
-  return response.data
+  try{
+    const response = await axios.get('/api/ACTIVIDADES/');
+    return response.data
+  }catch{
+    console.log('ERROR')
+  }
+  return null
 };
 
 // ----------------------------------------------------------------------
@@ -201,7 +206,11 @@ export default function ActividadesListPage() {
   }
 
   useEffect(()=>{
-    handleData();
+    try{
+      handleData();
+    }catch(ex){
+      console.log(ex)
+    }
     // eslint-disable-next-line
   },[])
 

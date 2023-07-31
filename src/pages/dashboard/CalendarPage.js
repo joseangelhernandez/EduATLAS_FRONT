@@ -357,7 +357,13 @@ const useGetEvents = () => {
   const { events: data } = useSelector((state) => state.calendar);
 
   const getAllEvents = useCallback(() => {
-    dispatch(getEvents());
+    try{
+      dispatch(getEvents());
+    }
+    catch{
+      console.log('');
+    }
+    
   }, [dispatch]);
 
   useEffect(() => {
