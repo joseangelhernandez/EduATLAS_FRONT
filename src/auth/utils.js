@@ -43,18 +43,18 @@ export const tokenExpired = (exp) => {
 
   // Test token expires after 10s
   // const timeLeft = currentTime + 10000 - currentTime; // ~10s
-  const timeLeft = exp * 1000 - currentTime;
-
-  clearTimeout(expiredTimer);
-
-  expiredTimer = setTimeout(() => {
-    alert('Token expired');
-
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('error');
-
-    window.location.href = PATH_AUTH.login;
-  }, timeLeft);
+  // const timeLeft = exp * 1000 - currentTime;
+  
+  // clearTimeout(expiredTimer);
+  
+  // expiredTimer = setTimeout(() => {
+  //   alert('Token expired');
+  
+  //   localStorage.removeItem('accessToken');
+  //   localStorage.removeItem('error');
+  
+  //   window.location.href = PATH_AUTH.login;
+  // }, timeLeft);
 };
 
 // ----------------------------------------------------------------------
