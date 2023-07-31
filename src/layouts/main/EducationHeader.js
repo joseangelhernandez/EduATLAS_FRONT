@@ -78,23 +78,27 @@ export default function EducationHeader() {
       <Grid item xs={isDesktop ? 12 : 6} md={isDesktop ? 6 : 3} sx={{pr: isDesktop ? 10 : 1, pt: isDesktop ? 1.5 : 2.5}}>
         <EducacionLogo style={{maxWidth: '300px'}}/>
       </Grid >
-      <Grid item xs={isDesktop ? 4 : 2} md={isDesktop ? 3 : 0} mt={5.5} sx={{ pr: 1.5, textAlign: 'right' }}>
-        <EscudoDominicano style={{ maxWidth: '50px' }}/>
-      </Grid>
-      <Grid item xs={isDesktop ? 8 : 4} md={isDesktop ? 3 : 0} mt={6}>
-        <Search>
-          <SearchIconWrapper>
-            <Icon icon="fe:search" />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Buscar..."
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </Search>
-        <Typography variant="body2" sx={{pt: 1.8, pl: 1}}>
-          República Dominicana
-        </Typography>
-      </Grid>
+      {isDesktop &&
+        <>
+          <Grid item xs={2} mt={5.5} sx={{ pr: 1.5, textAlign: 'right' }}>
+            <EscudoDominicano style={{ maxWidth: '40px' }}/>
+          </Grid>
+          <Grid item xs={4} mt={6}>
+            <Search>
+              <SearchIconWrapper>
+                <Icon icon="fe:search" />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Buscar..."
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+            <Typography variant="body2" sx={{pt: 1.8, pl: 1}}>
+              República Dominicana
+            </Typography>
+          </Grid>
+        </>
+      }
     </Grid>
   );
 }

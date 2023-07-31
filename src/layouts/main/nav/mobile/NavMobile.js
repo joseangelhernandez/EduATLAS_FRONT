@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // @mui
-import { List, Drawer, IconButton } from '@mui/material';
+import { List, Drawer, IconButton, Button, Box } from '@mui/material';
 // config
 import { NAV } from '../../../../config-global';
+// routes
+import { PATH_AUTH } from '../../../../routes/paths';
 // components
 import Logo from '../../../../components/fullLogo';
 import Iconify from '../../../../components/iconify';
@@ -71,6 +73,12 @@ export default function NavMobile({ isOffset, data }) {
               <NavList key={link.title} item={link} />
             ))}
           </List>
+          <Box sx={{p: 2.5, width: '100%'}} >
+            <Button variant="contained" target="_blank" rel="noopener" href={PATH_AUTH.login} fullWidth>
+              EduATLAS APP
+            </Button>
+          </Box>
+          
         </Scrollbar>
       </Drawer>
     </>

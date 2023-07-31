@@ -26,7 +26,7 @@ export default function Login() {
         <Typography variant="h4">Ingresar EduATLAS APP</Typography>
 
         <Grid container>
-          <Grid item xs={10}>
+          <Grid item xs={8}>
             <Stack direction="row" spacing={0.5}>
               <Typography variant="body2">Sistema de Gestión y Seguimiento de la Educación Dominicana</Typography>
             </Stack>

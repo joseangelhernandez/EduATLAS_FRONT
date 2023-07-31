@@ -119,14 +119,17 @@ export default function Header() {
         
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
           <Logo />
-          <Label color="success"> v1.0015 </Label>
+
+          <Box pl={1}><Label color="success"> v1.0015 </Label></Box>
+          
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} offset={!isHome ? 1.5 : scrollOffset}/>}
 
-          <Button variant="contained" target="_blank" rel="noopener" href={PATH_AUTH.login}>
+          {isDesktop && <Button variant="contained" target="_blank" rel="noopener" href={PATH_AUTH.login}>
             EduATLAS APP
-          </Button>
+           </Button>
+          }
 
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
         </Container>
