@@ -108,13 +108,13 @@ export default function Mail() {
     <>
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <CustomBreadcrumbs
-          heading="Mail"
+          heading="Bandeja de entrada"
           links={[
             {
               name: 'Dashboard',
               href: PATH_DASHBOARD.root,
             },
-            { name: 'Mail' },
+            { name: 'Bandeja de entrada' },
           ]}
         />
         <Card

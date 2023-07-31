@@ -63,7 +63,17 @@ export default function AuthLoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      await login(data.usuario, data.contraseña);
+      if(data.usuario === '40208725478' && data.contraseña === '123456789'){
+        await login(data.usuario, data.contraseña);
+      }
+      else
+      {
+        reset();
+        setError('afterSubmit', {
+          message: 'Usuario y/o contraseña inválida.',
+        });
+      }
+      
       if(localStorage.getItem('error') === '404'){
         reset();
         setError('afterSubmit', {
@@ -72,7 +82,7 @@ export default function AuthLoginForm() {
       }else if(localStorage.getItem('error') !== '404'){
         reset();
         setError('afterSubmit', {
-          message: 'Sucedió un error inesperado, favor volver a intentar.',
+          message: 'Usuario y/o contraseña inválida.',
         });
       }
     } catch (error) {
@@ -89,6 +99,7 @@ export default function AuthLoginForm() {
       <Stack spacing={3} style={{marginTop: -5}}>
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
+        <Alert severity="info">Usuario de prueba: <strong>40208725478</strong>, Contraseña de prueba: <strong>123456789</strong></Alert>
         <RHFTextField
           name="usuario"
           label="Usuario"

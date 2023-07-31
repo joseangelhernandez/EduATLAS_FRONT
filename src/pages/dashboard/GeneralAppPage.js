@@ -42,14 +42,14 @@ export default function GeneralAppPage() {
   return (
     <>
       <Helmet>
-        <title> General: App | Minimal UI</title>
+        <title> Inicio | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <AppWelcome
-              title={`Hola, \n ${user?.nombre}`}
+              title={`Hola, \n ${user?.nombre} \n (TODOS LOS DATOS Y ESTADÍSTICAS MOSTRADAS SOLO SON PARA FINES DE PROTOTIPADO)`} 
               description="¡Bienvenido de nuevo a EduAtlas! Estamos encantados de verte de nuevo. Prepárate para descubrir nuevas oportunidades de aprendizaje y crecimiento."
               img={
                 <SeoIllustration
@@ -69,7 +69,7 @@ export default function GeneralAppPage() {
 
           <Grid item xs={12} md={4}>
             <AppWidgetSummary
-              title="Total Active Users"
+              title="Total de usuarios de estudiantes"
               percent={2.6}
               total={18765}
               chart={{
@@ -81,7 +81,7 @@ export default function GeneralAppPage() {
 
           <Grid item xs={12} md={4}>
             <AppWidgetSummary
-              title="Total Installed"
+              title="Total de estudiantes de alto rendimiento"
               percent={0.2}
               total={4876}
               chart={{
@@ -93,7 +93,7 @@ export default function GeneralAppPage() {
 
           <Grid item xs={12} md={4}>
             <AppWidgetSummary
-              title="Total Downloads"
+              title="Predicción de la deserción anual"
               percent={-0.1}
               total={678}
               chart={{
@@ -105,7 +105,7 @@ export default function GeneralAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentDownload
-              title="Current Download"
+              title="Participantes de programas académicos"
               chart={{
                 colors: [
                   theme.palette.primary.main,
@@ -114,10 +114,10 @@ export default function GeneralAppPage() {
                   theme.palette.warning.main,
                 ],
                 series: [
-                  { label: 'Mac', value: 12244 },
-                  { label: 'Window', value: 53345 },
-                  { label: 'iOS', value: 44313 },
-                  { label: 'Android', value: 78343 },
+                  { label: 'Deportes y artes', value: 12244 },
+                  { label: 'Debates', value: 53345 },
+                  { label: 'Olimpíadas', value: 44313 },
+                  { label: 'Modelo de Naciones Unidas', value: 78343 },
                 ],
               }}
             />
@@ -125,23 +125,23 @@ export default function GeneralAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppAreaInstalled
-              title="Area Installed"
-              subheader="(+43%) than last year"
+              title= "Estudiantes Promovidos (en miles)"
+              subheader= "(+43%) que el año pasado"
               chart={{
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep'],
                 series: [
                   {
                     year: '2019',
                     data: [
-                      { name: 'Asia', data: [10, 41, 35, 51, 49, 62, 69, 91, 148] },
-                      { name: 'America', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
+                      { name: 'Educación Pre universitaria', data: [1.0, 4.1, 3.5, 5.1, 4.9, 6.2, 6.9, 9.1, 14.8] },
+                      { name: 'Educación Básica e inicial', data: [1.0, 3.4, 1.3, 5.6, 7.7, 8.8, 9.9, 7.7, 4.5] },
                     ],
                   },
                   {
                     year: '2020',
                     data: [
-                      { name: 'Asia', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
-                      { name: 'America', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
+                      { name: 'Educación Pre universitaria', data: [14.8, 9.1, 6.9, 6.2, 4.9, 5.1, 3.5, 4.1, 1.0] },
+                      { name: 'Educación Básica e inicial', data: [4.5, 7.7, 9.9, 8.8, 7.7, 5.6, 1.3, 3.4, 1.0] },
                     ],
                   },
                 ],
@@ -149,36 +149,14 @@ export default function GeneralAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} lg={8}>
-            <AppNewInvoice
-              title="New Invoice"
-              tableData={_appInvoices}
-              tableLabels={[
-                { id: 'id', label: 'Invoice ID' },
-                { id: 'category', label: 'Category' },
-                { id: 'price', label: 'Price' },
-                { id: 'status', label: 'Status' },
-                { id: '' },
-              ]}
-            />
-          </Grid>
-
           <Grid item xs={12} md={6} lg={4}>
-            <AppTopRelated title="Top Related Applications" list={_appRelated} />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTopInstalledCountries title="Top Installed Countries" list={_appInstalled} />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTopAuthors title="Top Authors" list={_appAuthors} />
+            <AppTopAuthors title="Top Estudiantes" list={_appAuthors} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
             <Stack spacing={3}>
               <AppWidget
-                title="Conversion"
+                title="Total de docentes activos"
                 total={38566}
                 icon="eva:person-fill"
                 chart={{
@@ -187,7 +165,7 @@ export default function GeneralAppPage() {
               />
 
               <AppWidget
-                title="Applications"
+                title="Total de reportes solucionados"
                 total={55566}
                 icon="eva:email-fill"
                 color="info"

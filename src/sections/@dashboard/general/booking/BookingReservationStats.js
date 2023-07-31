@@ -17,7 +17,7 @@ BookingReservationStats.propTypes = {
 export default function BookingReservationStats({ title, subheader, chart, ...other }) {
   const { categories, colors, series, options } = chart;
 
-  const [seriesData, setSeriesData] = useState('Year');
+  const [seriesData, setSeriesData] = useState('Año escolar');
 
   const chartOptions = useChart({
     colors,

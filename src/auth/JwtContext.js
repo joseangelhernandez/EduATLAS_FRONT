@@ -22,6 +22,32 @@ const initialState = {
   user: null,
 };
 
+const usuarioPrueba = {
+  "usuario": "40208725478",
+  "nombre": "Usuario de prueba",
+  "apellido": "Costa",
+  "roleId": 1,
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQwMjA4NzI1NDc4IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiam9zZWFuQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6Ikpvc2UgQW5nZWwgUHJ1ZWJhIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6Ikhlcm5hbmRleiBwcnVlYmEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbG9jYWxpdHkiOiIxNCIsImV4cCI6MTY5MDc3NDk4NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMTUiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDMxNSJ9.6y2qyL0Ss_UIp4AmRlqskHliqho7G2ZZr1nVJ252tH8",
+  "comision": 14,
+  "cargo": "ESTUDIANTE",
+  "user": {
+      "usuario": "40208725478",
+      "contraseña": "123456789",
+      "roleId": "Super User",
+      "codigoResetPass": null,
+      "email": "prueba@correo.com",
+      "regional": 15,
+      "nombre": "Usuario de prueba",
+      "apellido": "Costa",
+      "comision": "GRL",
+      "tipo_Mesa": "USUARIO DE PRUEBA",
+      "confirmacion_envio": true,
+      "imageName": "40208725478.png",
+      "imageFile": null,
+      "imageSrc": "https://api-dev-minimal-v4.vercel.app/assets/images/avatars/avatar_4.jpg",
+  }
+}
+
 const reducer = (state, action) => {
   if (action.type === 'INITIAL') {
     return {
@@ -78,9 +104,9 @@ export function AuthProvider({ children }) {
       if (accessToken && isValidToken(accessToken)) {
         setSession(accessToken);
 
-        const response = await axios.get('/api/USUARIOS/cuenta');
+        // const response = await axios.get('/api/USUARIOS/cuenta');
 
-        const user  = response.data;
+        const user  = usuarioPrueba;
 
         dispatch({
           type: 'INITIAL',
@@ -117,9 +143,9 @@ export function AuthProvider({ children }) {
   // LOGIN
   const login = useCallback(async (id, contraseña) => {
     try{
-      const response = await axios.get(`/api/USUARIOS/${id}/${contraseña}`);
+      // const response = await axios.get(`/api/USUARIOS/${id}/${contraseña}`);
 
-      const { accessToken, user } = response.data;
+      const { accessToken, user } = usuarioPrueba;
       
       setSession(accessToken);
 

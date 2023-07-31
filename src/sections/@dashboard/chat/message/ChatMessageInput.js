@@ -51,7 +51,7 @@ export default function ChatMessageInput({ disabled, conversationId, onSend, sx,
         value={message}
         onKeyUp={handleSend}
         onChange={(event) => setMessage(event.target.value)}
-        placeholder="Type a message"
+        placeholder="Escribir mensaje"
         startAdornment={
           <InputAdornment position="start">
             <IconButton size="small">

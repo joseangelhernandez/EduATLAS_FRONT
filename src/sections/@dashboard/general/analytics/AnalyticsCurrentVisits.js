@@ -85,7 +85,7 @@ export default function AnalyticsCurrentVisits({ title, subheader, chart, ...oth
       <CardHeader title={title} subheader={subheader} />
 
       <StyledChart dir="ltr">
-        <Chart type="pie" series={chartSeries} options={chartOptions} height={280} />
+        <Chart type="pie" series={chartSeries} options={chartOptions} height={300} />
       </StyledChart>
     </Card>
   );

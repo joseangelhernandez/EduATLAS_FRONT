@@ -54,9 +54,9 @@ export const _appInvoices = [...Array(5)].map((_, index) => ({
 export const _appFeatured = [...Array(3)].map((_, index) => ({
   id: _mock.id(index),
   title: [
-    'El MINERD rompe récord, todo el mundo con cupo en las escuelas.',
-    'El Instituto Polítecnico Loyola es admitido por Kennedy School de la NASA como un alto Centro de Estudios.',
-    'EduATLAS demuestra ser el sistemas más robusto que encamina a la educación dominicana hacia la calidad.',
+    'El MINERD rompe récord',
+    'El Instituto Polítecnico Loyola es admitido por Kennedy School',
+    'EduATLAS demuestra ser el sistemas más robusto',
   ][index],
   description: _mock.text.title(index),
   image: _mock.image.cover(index),

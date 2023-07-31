@@ -23,7 +23,7 @@ export default function BookingRoomAvailable({ title, subheader, chart, ...other
 
   const total = sumBy(series, 'value');
 
-  const chartSeries = (series.filter((i) => i.label === 'Sold out')[0].value / total) * 100;
+  const chartSeries = (series.filter((i) => i.label === 'Ocupadas')[0].value / total) * 100;
 
   const chartColors = colors || [theme.palette.primary.light, theme.palette.primary.main];
 
@@ -50,7 +50,7 @@ export default function BookingRoomAvailable({ title, subheader, chart, ...other
           name: { offsetY: -16 },
           value: { offsetY: 8 },
           total: {
-            label: 'Rooms',
+            label: 'Aulas',
             formatter: () => fNumber(total),
           },
         },
@@ -93,7 +93,7 @@ function Legend({ item }) {
             height: 16,
             bgcolor: (theme) => alpha(theme.palette.grey[500], 0.16),
             borderRadius: 0.75,
-            ...(item.label === 'Sold out' && {
+            ...(item.label === 'Ocupadas' && {
               bgcolor: 'primary.main',
             }),
           }}
@@ -104,7 +104,7 @@ function Legend({ item }) {
         </Typography>
       </Stack>
 
-      <Typography variant="subtitle1"> {item.value} Rooms</Typography>
+      <Typography variant="subtitle1"> {item.value} Aulas</Typography>
     </Stack>
   );
 }

@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 // @mui
 import { Stack, Button, Typography, IconButton, MenuItem } from '@mui/material';
-// utils
-import { fDate } from '../../../utils/formatTime';
 // hooks
 import useResponsive from '../../../hooks/useResponsive';
 // components
@@ -13,9 +11,9 @@ import MenuPopover from '../../../components/menu-popover';
 // ----------------------------------------------------------------------
 
 const VIEW_OPTIONS = [
-  { value: 'dayGridMonth', label: 'Month', icon: 'ic:round-view-module' },
-  { value: 'timeGridWeek', label: 'Week', icon: 'ic:round-view-week' },
-  { value: 'timeGridDay', label: 'Day', icon: 'ic:round-view-day' },
+  { value: 'dayGridMonth', label: 'Mes', icon: 'ic:round-view-module' },
+  { value: 'timeGridWeek', label: 'Semana', icon: 'ic:round-view-week' },
+  { value: 'timeGridDay', label: 'Dia', icon: 'ic:round-view-day' },
   { value: 'listWeek', label: 'Agenda', icon: 'ic:round-view-agenda' },
 ];
 
@@ -51,6 +49,11 @@ export default function CalendarToolbar({
   const handleClosePopover = () => {
     setOpenPopover(null);
   };
+
+  const fDate = (fecha) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(fecha).toLocaleDateString('es-ES', options);
+  }
 
   const selectedItem = VIEW_OPTIONS.filter((item) => item.value === view)[0];
 
@@ -93,7 +96,7 @@ export default function CalendarToolbar({
 
         <Stack direction="row" alignItems="center" spacing={1}>
           <Button size="small" color="error" variant="contained" onClick={onToday}>
-            Today
+            Hoy
           </Button>
 
           <IconButton onClick={onOpenFilter}>

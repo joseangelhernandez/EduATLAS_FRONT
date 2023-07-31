@@ -49,12 +49,12 @@ export default function BlogNewPostForm() {
   const [openPreview, setOpenPreview] = useState(false);
 
   const NewBlogSchema = Yup.object().shape({
-    title: Yup.string().required('Title is required'),
-    description: Yup.string().required('Description is required'),
-    tags: Yup.array().min(2, 'Must have at least 2 tags'),
-    metaKeywords: Yup.array().min(1, 'Meta keywords is required'),
-    cover: Yup.mixed().required('Cover is required').nullable(true),
-    content: Yup.string().required('Content is required'),
+    title: Yup.string().required('El título es obligatorio'),
+    description: Yup.string().required('La descripción es obligatoria'),
+    tags: Yup.array().min(2, 'Debe tener al menos 2 etiquetas'),
+    metaKeywords: Yup.array().min(1, 'Se requieren palabras clave meta'),
+    cover: Yup.mixed().required('Se requiere una portada').nullable(true),
+    content: Yup.string().required('El contenido es obligatorio'),    
   });
 
   const defaultValues = {
@@ -98,7 +98,7 @@ export default function BlogNewPostForm() {
       await new Promise((resolve) => setTimeout(resolve, 500));
       reset();
       handleClosePreview();
-      enqueueSnackbar('Post success!');
+      enqueueSnackbar('Entrada creada con éxito.');
       navigate(PATH_DASHBOARD.blog.posts);
       console.log('DATA', data);
     } catch (error) {
@@ -131,13 +131,13 @@ export default function BlogNewPostForm() {
         <Grid item xs={12} md={8}>
           <Card sx={{ p: 3 }}>
             <Stack spacing={3}>
-              <RHFTextField name="title" label="Post Title" />
+              <RHFTextField name="title" label="Título" />
 
-              <RHFTextField name="description" label="Description" multiline rows={3} />
+              <RHFTextField name="description" label="Descripción" multiline rows={3} />
 
               <Stack spacing={1}>
                 <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>
-                  Content
+                  Contenido
                 </Typography>
 
                 <RHFEditor simple name="content" />
@@ -145,7 +145,7 @@ export default function BlogNewPostForm() {
 
               <Stack spacing={1}>
                 <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>
-                  Cover
+                  Imagen - Banner
                 </Typography>
 
                 <RHFUpload
@@ -165,14 +165,14 @@ export default function BlogNewPostForm() {
               <div>
                 <RHFSwitch
                   name="publish"
-                  label="Publish"
+                  label="Publicar"
                   labelPlacement="start"
                   sx={{ mb: 1, mx: 0, width: 1, justifyContent: 'space-between' }}
                 />
 
                 <RHFSwitch
                   name="comments"
-                  label="Enable comments"
+                  label="Habilitar comentarios"
                   labelPlacement="start"
                   sx={{ mx: 0, width: 1, justifyContent: 'space-between' }}
                 />
@@ -180,18 +180,18 @@ export default function BlogNewPostForm() {
 
               <RHFAutocomplete
                 name="tags"
-                label="Tags"
+                label="Etiquetas"
                 multiple
                 freeSolo
                 options={TAGS_OPTION.map((option) => option)}
                 ChipProps={{ size: 'small' }}
               />
 
-              <RHFTextField name="metaTitle" label="Meta title" />
+              <RHFTextField name="metaTitle" label="Meta Título" />
 
               <RHFTextField
                 name="metaDescription"
-                label="Meta description"
+                label="Meta descripción"
                 fullWidth
                 multiline
                 rows={3}
@@ -199,7 +199,7 @@ export default function BlogNewPostForm() {
 
               <RHFAutocomplete
                 name="metaKeywords"
-                label="Meta keywords"
+                label="Palabras claves"
                 multiple
                 freeSolo
                 options={TAGS_OPTION.map((option) => option)}
@@ -216,7 +216,7 @@ export default function BlogNewPostForm() {
               size="large"
               onClick={handleOpenPreview}
             >
-              Preview
+              Previsulizar
             </Button>
 
             <LoadingButton
@@ -226,7 +226,7 @@ export default function BlogNewPostForm() {
               size="large"
               loading={isSubmitting}
             >
-              Post
+              Publicar
             </LoadingButton>
           </Stack>
         </Grid>

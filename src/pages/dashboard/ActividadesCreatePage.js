@@ -17,7 +17,7 @@ export default function ActividadesCreatePage() {
   return (
     <>
       <Helmet>
-        <title> Actividades: Registrar nueva actividad | SIGEL</title>
+        <title> Actividades | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

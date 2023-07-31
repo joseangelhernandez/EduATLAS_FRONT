@@ -20,7 +20,7 @@ export default function Profile({ info, posts }) {
     <Grid container spacing={3}>
       <Grid item xs={12} md={4}>
         <Stack spacing={3}>
-          <ProfileFollowInfo follower={info.follower} following={info.following} />
+          <ProfileFollowInfo follower={info.follower} following={info.following} liderazgo={info.liderazgo}/>
 
           <ProfileAbout
             quote={info.quote}

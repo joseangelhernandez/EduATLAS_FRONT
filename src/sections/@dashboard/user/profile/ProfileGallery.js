@@ -15,9 +15,10 @@ import Lightbox from '../../../../components/lightbox';
 
 ProfileGallery.propTypes = {
   gallery: PropTypes.array,
+  cert: PropTypes.array,
 };
 
-export default function ProfileGallery({ gallery }) {
+export default function ProfileGallery({ gallery, cert }) {
   const [selectedImage, setSelectedImage] = useState(-1);
 
   const imagesLightbox = gallery.map((img) => ({
@@ -33,10 +34,25 @@ export default function ProfileGallery({ gallery }) {
     setSelectedImage(-1);
   };
 
+  const [selectedImageCert, setSelectedImageCert] = useState(-1);
+
+  const imagesLightboxCert = cert.map((img) => ({
+    src: img.imageUrl,
+  }));
+
+  const handleOpenLightboxCert = (imageUrl) => {
+    const imageIndex = imagesLightboxCert.findIndex((image) => image.src === imageUrl);
+    setSelectedImageCert(imageIndex);
+  };
+
+  const handleCloseLightboxCert = () => {
+    setSelectedImageCert(-1);
+  };
+
   return (
     <>
       <Typography variant="h4" sx={{ my: 5 }}>
-        Gallery
+        Documentos
       </Typography>
 
       <Box
@@ -63,6 +79,36 @@ export default function ProfileGallery({ gallery }) {
         open={selectedImage >= 0}
         close={handleCloseLightbox}
       />
+
+      <Typography variant="h4" sx={{ my: 5 }}>
+        Certificados
+      </Typography>
+
+      <Box
+        gap={3}
+        display="grid"
+        gridTemplateColumns={{
+          xs: 'repeat(1, 1fr)',
+          sm: 'repeat(2, 1fr)',
+          md: 'repeat(3, 1fr)',
+        }}
+      >
+        {cert.map((image) => (
+          <GalleryItem
+            key={image.id}
+            image={image}
+            onOpenLightbox={() => handleOpenLightboxCert(image.imageUrl)}
+          />
+        ))}
+      </Box>
+
+      <Lightbox
+        index={selectedImageCert}
+        slides={imagesLightboxCert}
+        open={selectedImageCert >= 0}
+        close={handleCloseLightboxCert}
+      />
+
     </>
   );
 }

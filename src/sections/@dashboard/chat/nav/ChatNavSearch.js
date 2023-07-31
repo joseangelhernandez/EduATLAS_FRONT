@@ -21,7 +21,7 @@ export default function ChatNavSearch({ value, onChange, onClickAway }) {
         size="small"
         value={value}
         onChange={onChange}
-        placeholder="Search contacts..."
+        placeholder="Buscar contactos..."
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

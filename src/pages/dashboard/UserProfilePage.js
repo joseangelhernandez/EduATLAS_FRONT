@@ -13,6 +13,8 @@ import {
   _userFriends,
   _userGallery,
   _userFollowers,
+  _userDocs,
+  _userCerts,
 } from '../../_mock/arrays';
 // components
 import Iconify from '../../components/iconify';
@@ -25,8 +27,8 @@ import {
   ProfileFriends,
   ProfileGallery,
   ProfileFollowers,
+  HistorialAcademico,
 } from '../../sections/@dashboard/user/profile';
-
 // ----------------------------------------------------------------------
 
 export default function UserProfilePage() {
@@ -41,19 +43,19 @@ export default function UserProfilePage() {
   const TABS = [
     {
       value: 'profile',
-      label: 'Profile',
+      label: 'Perfil',
       icon: <Iconify icon="ic:round-account-box" />,
       component: <Profile info={_userAbout} posts={_userFeeds} />,
     },
     {
       value: 'followers',
-      label: 'Followers',
+      label: 'Compañeros/as',
       icon: <Iconify icon="eva:heart-fill" />,
       component: <ProfileFollowers followers={_userFollowers} />,
     },
     {
       value: 'friends',
-      label: 'Friends',
+      label: 'Amigos/as',
       icon: <Iconify icon="eva:people-fill" />,
       component: (
         <ProfileFriends
@@ -65,16 +67,22 @@ export default function UserProfilePage() {
     },
     {
       value: 'gallery',
-      label: 'Gallery',
+      label: 'Documentos',
       icon: <Iconify icon="ic:round-perm-media" />,
-      component: <ProfileGallery gallery={_userGallery} />,
+      component: <ProfileGallery gallery={_userDocs} cert={_userCerts}/>,
+    },
+    {
+      value: 'academico',
+      label: 'Historial académico',
+      icon: <Iconify icon="solar:square-academic-cap-bold-duotone" />,
+      component: <HistorialAcademico />,
     },
   ];
 
   return (
     <>
       <Helmet>
-        <title> User: Profile | Minimal UI</title>
+        <title> Usuario: Perfil | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

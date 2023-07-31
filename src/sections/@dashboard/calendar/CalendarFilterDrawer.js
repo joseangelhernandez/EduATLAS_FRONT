@@ -66,9 +66,9 @@ export default function CalendarFilterDrawer({
         justifyContent="space-between"
         sx={{ pl: 2, pr: 1, py: 2 }}
       >
-        <Typography variant="subtitle1">Filters</Typography>
+        <Typography variant="subtitle1">Filtros</Typography>
 
-        <Tooltip title="Reset">
+        <Tooltip title="Predeterminado">
           <Box sx={{ position: 'relative' }}>
             <IconButton onClick={onResetFilter}>
               <Iconify icon="ic:round-refresh" />
@@ -101,7 +101,7 @@ export default function CalendarFilterDrawer({
           p: (theme) => theme.spacing(2, 2, 1, 2),
         }}
       >
-        Colors
+        Colores
       </Typography>
 
       <ColorMultiPicker
@@ -119,19 +119,19 @@ export default function CalendarFilterDrawer({
           fontWeight: 'fontWeightMedium',
         }}
       >
-        Range
+        Rango
       </Typography>
 
       <Stack spacing={2} sx={{ px: 2 }}>
         <DatePicker
-          label="Start date"
+          label="Fecha de inicio"
           value={picker.startDate}
           onChange={picker.onChangeStartDate}
           renderInput={(params) => <TextField size="small" {...params} />}
         />
 
         <DatePicker
-          label="End date"
+          label="Fecha final"
           value={picker.endDate}
           onChange={picker.onChangeEndDate}
           renderInput={(params) => (
@@ -153,7 +153,7 @@ export default function CalendarFilterDrawer({
           fontWeight: 'fontWeightMedium',
         }}
       >
-        Events ({events.length})
+        Actividades ({events.length})
       </Typography>
 
       <Scrollbar sx={{ height: 1 }}>

@@ -100,11 +100,11 @@ export default function CalendarForm({
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3} sx={{ px: 3 }}>
-        <RHFTextField name="title" label="Title" />
+        <RHFTextField name="title" label="Título" />
 
-        <RHFTextField name="description" label="Description" multiline rows={3} />
+        <RHFTextField name="description" label="Descripción" multiline rows={3} />
 
-        <RHFSwitch name="allDay" label="All day" />
+        <RHFSwitch name="allDay" label="Todo el día" />
 
         <Controller
           name="start"
@@ -113,7 +113,7 @@ export default function CalendarForm({
             <MobileDateTimePicker
               {...field}
               onChange={(newValue) => field.onChange(newValue)}
-              label="Start date"
+              label="Fecha de inicio"
               inputFormat="dd/MM/yyyy hh:mm a"
               renderInput={(params) => <TextField {...params} fullWidth />}
             />
@@ -127,14 +127,14 @@ export default function CalendarForm({
             <MobileDateTimePicker
               {...field}
               onChange={(newValue) => field.onChange(newValue)}
-              label="End date"
+              label="Fecha de finalización"
               inputFormat="dd/MM/yyyy hh:mm a"
               renderInput={(params) => (
                 <TextField
                   {...params}
                   fullWidth
                   error={!!isDateError}
-                  helperText={isDateError && 'End date must be later than start date'}
+                  helperText={isDateError && 'La fecha de finalización debe ser posterior a la fecha de inicio'}
                 />
               )}
             />
@@ -156,7 +156,7 @@ export default function CalendarForm({
 
       <DialogActions>
         {hasEventData && (
-          <Tooltip title="Delete Event">
+          <Tooltip title="Borrar actividad">
             <IconButton onClick={onDeleteEvent}>
               <Iconify icon="eva:trash-2-outline" />
             </IconButton>
@@ -166,11 +166,11 @@ export default function CalendarForm({
         <Box sx={{ flexGrow: 1 }} />
 
         <Button variant="outlined" color="inherit" onClick={onCancel}>
-          Cancel
+          Cancelar
         </Button>
 
         <LoadingButton type="submit" variant="contained" loading={isSubmitting}>
-          {hasEventData ? 'Update' : 'Add'}
+          {hasEventData ? 'Actulizar' : 'Añadir'}
         </LoadingButton>
       </DialogActions>
     </FormProvider>

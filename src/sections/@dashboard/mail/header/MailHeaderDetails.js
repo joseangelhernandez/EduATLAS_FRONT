@@ -54,7 +54,7 @@ export default function MailHeaderDetails({ mailFrom, mailTo, createdAt, sx, ...
       {...other}
     >
       <Stack direction="row" alignItems="center" flexGrow={1}>
-        <Tooltip title="Back">
+        <Tooltip title="Volver">
           <IconButton onClick={handleBack}>
             <Iconify icon="eva:arrow-ios-back-fill" />
           </IconButton>
@@ -89,7 +89,7 @@ export default function MailHeaderDetails({ mailFrom, mailTo, createdAt, sx, ...
               {fDateTime(createdAt)}
             </Typography>
 
-            <Tooltip title="Reply">
+            <Tooltip title="Responder">
               <IconButton>
                 <Iconify icon="ic:round-reply" />
               </IconButton>
@@ -97,7 +97,7 @@ export default function MailHeaderDetails({ mailFrom, mailTo, createdAt, sx, ...
           </>
         )}
 
-        <Tooltip title="More options">
+        <Tooltip title="Más opciones">
           <IconButton>
             <Iconify icon="eva:more-vertical-fill" />
           </IconButton>

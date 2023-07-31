@@ -61,7 +61,7 @@ export default function BookingTotalIncomes({
         show: false,
       },
       y: {
-        formatter: (value) => fCurrency(value),
+        formatter: (value) => value,
         title: {
           formatter: () => '',
         },
@@ -84,8 +84,8 @@ export default function BookingTotalIncomes({
     >
       <Stack direction="row" justifyContent="space-between" sx={{ mb: 3 }}>
         <div>
-          <Typography sx={{ mb: 2, typography: 'subtitle2' }}>Total Incomes</Typography>
-          <Typography sx={{ typography: 'h3' }}>{fCurrency(total)}</Typography>
+          <Typography sx={{ mb: 2, typography: 'subtitle2' }}>Total Inscripciones</Typography>
+          <Typography sx={{ typography: 'h3' }}>{total.toLocaleString()}</Typography>
         </div>
 
         <div>
@@ -99,7 +99,7 @@ export default function BookingTotalIncomes({
           </Stack>
 
           <Typography variant="body2" component="span" sx={{ opacity: 0.72 }}>
-            &nbsp;than last month
+            &nbsp;desde el año escolar pasado
           </Typography>
         </div>
       </Stack>

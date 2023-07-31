@@ -59,7 +59,7 @@ export default function MailList({
 
       {isEmpty && !isLoading ? (
         <EmptyContent
-          title="There is no conversation"
+          title="No se encontraron mensajes."
           img="/assets/illustrations/illustration_empty_mail.svg"
         />
       ) : (

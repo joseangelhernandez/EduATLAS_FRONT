@@ -42,14 +42,14 @@ export default function ProfileFriends({ friends, searchFriends, onSearchFriends
         direction={{ xs: 'column', sm: 'row' }}
         sx={{ my: 5 }}
       >
-        <Typography variant="h4">Friends</Typography>
+        <Typography variant="h4">Amigos/as</Typography>
 
         <CustomTextField
           width={220}
           size="small"
           value={searchFriends}
           onChange={onSearchFriends}
-          placeholder="Search friends..."
+          placeholder="Buscar amigos/as..."
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -102,12 +102,7 @@ function FriendCard({ friend }) {
 
   const handleDelete = () => {
     handleClosePopover();
-    console.log('DELETE', name);
-  };
-
-  const handleEdit = () => {
-    handleClosePopover();
-    console.log('EDIT', name);
+    console.log('Eliminar de amigo', name);
   };
 
   return (
@@ -159,13 +154,9 @@ function FriendCard({ friend }) {
       <MenuPopover open={openPopover} onClose={handleClosePopover} arrow="right-top">
         <MenuItem onClick={handleDelete} sx={{ color: 'error.main' }}>
           <Iconify icon="eva:trash-2-outline" />
-          Delete
+          Boirrar
         </MenuItem>
 
-        <MenuItem onClick={handleEdit}>
-          <Iconify icon="eva:edit-fill" />
-          Edit
-        </MenuItem>
       </MenuPopover>
     </>
   );

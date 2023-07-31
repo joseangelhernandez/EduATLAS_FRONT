@@ -9,17 +9,19 @@ import { fNumber } from '../../../../../utils/formatNumber';
 ProfileFollowInfo.propTypes = {
   follower: PropTypes.number,
   following: PropTypes.number,
+  liderazgo: PropTypes.number,
 };
 
-export default function ProfileFollowInfo({ follower, following }) {
+export default function ProfileFollowInfo({ follower, following, liderazgo }) {
   return (
+    <>
     <Card sx={{ py: 3 }}>
       <Stack direction="row" divider={<Divider orientation="vertical" flexItem />}>
         <Stack width={1} textAlign="center">
           <Typography variant="h4">{fNumber(follower)}</Typography>
 
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Follower
+            Compañeros
           </Typography>
         </Stack>
 
@@ -27,10 +29,22 @@ export default function ProfileFollowInfo({ follower, following }) {
           <Typography variant="h4">{fNumber(following)}</Typography>
 
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Following
+            Amigos
           </Typography>
         </Stack>
       </Stack>
     </Card>
+    <Card sx={{ py: 3 }}>
+    <Stack direction="row">
+      <Stack width={1} textAlign="center">
+        <Typography variant="h3" color="#29C300">{fNumber(liderazgo)}</Typography>
+
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          ÍNDICE DE LIDERAZGO
+        </Typography>
+      </Stack>
+    </Stack>
+  </Card>
+  </>
   );
 }

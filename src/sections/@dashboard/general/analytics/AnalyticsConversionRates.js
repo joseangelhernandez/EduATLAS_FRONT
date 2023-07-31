@@ -48,7 +48,7 @@ export default function AnalyticsConversionRates({ title, subheader, chart, ...o
       <CardHeader title={title} subheader={subheader} />
 
       <Box sx={{ mx: 3 }} dir="ltr">
-        <Chart type="bar" series={[{ data: chartSeries }]} options={chartOptions} height={364} />
+        <Chart type="bar" series={[{ data: chartSeries }]} options={chartOptions} height={800} />
       </Box>
     </Card>
   );

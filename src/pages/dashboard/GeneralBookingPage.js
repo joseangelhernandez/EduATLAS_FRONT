@@ -35,27 +35,31 @@ export default function GeneralBookingPage() {
   return (
     <>
       <Helmet>
-        <title> General: Booking | Minimal UI</title>
+        <title> Ocupación Escolar | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <BookingWidgetSummary
-              title="Total Booking"
-              total={714000}
+              title="Total de Estudiantes"
+              total={700000} 
               icon={<BookingIllustration />}
             />
-          </Grid>
+          </  Grid>
 
           <Grid item xs={12} md={4}>
-            <BookingWidgetSummary title="Check In" total={311000} icon={<CheckInIllustration />} />
-          </Grid>
+            <BookingWidgetSummary 
+              title="Ocupación Actual" 
+              total={500000} 
+              icon={<CheckInIllustration />} 
+            />
+          </  Grid>
 
           <Grid item xs={12} md={4}>
             <BookingWidgetSummary
-              title="Check Out"
-              total={124000}
+              title="Cupos Disponibles"
+              total={200000} 
               icon={<CheckOutIllustration />}
             />
           </Grid>
@@ -64,76 +68,78 @@ export default function GeneralBookingPage() {
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <BookingTotalIncomes
-                  total={18765}
+                  title="Ocupación Histórica"
+                  total={18765} 
                   percent={2.6}
                   chart={{
-                    series: [111, 136, 76, 108, 74, 54, 57, 84],
+                    series: [111, 136, 76, 108, 74, 54, 57, 84], 
                   }}
                 />
-              </Grid>
-
+              </  Grid>
+                
               <Grid item xs={12} md={6}>
-                <BookingBookedRoom title="Booked Room" data={_bookingsOverview} />
-              </Grid>
-
+                <BookingBookedRoom 
+                  title="Disponibilidad Histórica" 
+                  data={_bookingsOverview} es
+                />
+              </  Grid>
+                
               <Grid item xs={12} md={12}>
                 <BookingCheckInWidgets
+                  title="Ocupación y Disponibilidad de Cupos"
                   chart={{
                     colors: [theme.palette.warning.main],
                     series: [
-                      { label: 'Check In', percent: 72, total: 38566 },
-                      { label: 'Check Out', percent: 64, total: 18472 },
+                      { label: 'Ocupación', percent: 72, total: 38566 }, 
+                      { label: 'Disponibilidad', percent: 64, total: 18472 }, 
                     ],
                   }}
                 />
               </Grid>
             </Grid>
+
           </Grid>
 
           <Grid item xs={12} md={4}>
             <BookingRoomAvailable
-              title="Room Available"
+              title="Aulas Disponibles"
               chart={{
                 series: [
-                  { label: 'Sold out', value: 120 },
-                  { label: 'Available', value: 66 },
+                  { label: 'Ocupadas', value: 120 },
+                  { label: 'Disponibles', value: 66 },
                 ],
               }}
             />
           </Grid>
 
+
           <Grid item xs={12} md={8}>
             <BookingReservationStats
-              title="Reservation Stats"
-              subheader="(+43% Check In | +12% Check Out) than last year"
+              title="Estadísticas de Matrícula"
+              subheader="(+43% Matriculados | +12% Graduados) que el año pasado"
               chart={{
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                categories: ['2021-2022', '2022-2023', '2023-2024'],
                 series: [
                   {
-                    type: 'Week',
+                    type: 'Semestre',
                     data: [
-                      { name: 'Check In', data: [10, 41, 35, 151, 49, 62, 69, 91, 48] },
-                      { name: 'Check Out', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
+                      { name: 'Matriculados', data: [2000, 2200, 2400] },
+                      { name: 'Graduados', data: [1800, 2100, 2300] },
                     ],
                   },
                   {
-                    type: 'Month',
+                    type: 'Año escolar',
                     data: [
-                      { name: 'Check In', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
-                      { name: 'Check Out', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
-                    ],
-                  },
-                  {
-                    type: 'Year',
-                    data: [
-                      { name: 'Check In', data: [76, 42, 29, 41, 27, 138, 117, 86, 63] },
-                      { name: 'Check Out', data: [80, 55, 34, 114, 80, 130, 15, 28, 55] },
+                      { name: 'Matriculados', data: [4000, 4500, 5000] },
+                      { name: 'Graduados', data: [3800, 4100, 4700] },
                     ],
                   },
                 ],
               }}
             />
+
           </Grid>
+          
 
           <Grid item xs={12} md={4}>
             <BookingCustomerReviews
@@ -143,29 +149,6 @@ export default function GeneralBookingPage() {
             />
           </Grid>
 
-          <Grid item xs={12}>
-            <BookingNewestBooking
-              title="Newest Booking"
-              subheader="12 Booking"
-              list={_bookingNew}
-            />
-          </Grid>
-
-          <Grid item xs={12}>
-            <BookingDetails
-              title="Booking Details"
-              tableData={_bookings}
-              tableLabels={[
-                { id: 'booker', label: 'Booker' },
-                { id: 'checkIn', label: 'Check In' },
-                { id: 'checkOut', label: 'Check Out' },
-                { id: 'status', label: 'Status' },
-                { id: 'phone', label: 'Phone' },
-                { id: 'roomType', label: 'Room Type' },
-                { id: '' },
-              ]}
-            />
-          </Grid>
         </Grid>
       </Container>
     </>

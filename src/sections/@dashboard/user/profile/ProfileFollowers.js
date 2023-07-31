@@ -15,7 +15,7 @@ export default function ProfileFollowers({ followers }) {
   return (
     <>
       <Typography variant="h4" sx={{ my: 5 }}>
-        Followers
+        Compañeros/as
       </Typography>
 
       <Box
@@ -90,7 +90,7 @@ function FollowerCard({ follower }) {
         startIcon={toggle && <Iconify icon="eva:checkmark-fill" />}
         sx={{ flexShrink: 0 }}
       >
-        {toggle ? 'Followed' : 'Follow'}
+        {toggle ? 'Amigo/a' : 'Compañero/a'}
       </Button>
     </Card>
   );

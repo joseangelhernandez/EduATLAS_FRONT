@@ -72,19 +72,19 @@ export default function MailHeader({
                 event.target.checked ? onSelectAllMails() : onDeselectAllMails()
               }
             />
-            <Tooltip title="Refresh">
+            <Tooltip title="Actualizar">
               <IconButton>
                 <Iconify icon="eva:refresh-fill" />
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="Dense">
+            <Tooltip title="Comprimir">
               <IconButton onClick={onToggleDense}>
                 <Iconify icon="eva:collapse-fill" />
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="More">
+            <Tooltip title="Más">
               <IconButton>
                 <Iconify icon="eva:more-vertical-fill" />
               </IconButton>
@@ -95,7 +95,7 @@ export default function MailHeader({
 
       <TextField
         size="small"
-        placeholder="Search"
+        placeholder="Buscar..."
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -112,13 +112,13 @@ export default function MailHeader({
             1 - {mailsLength} of {mailsLength}
           </Typography>
 
-          <Tooltip title="Next page">
+          <Tooltip title="Siguiente página">
             <IconButton>
               <Iconify icon="eva:arrow-ios-back-fill" />
             </IconButton>
           </Tooltip>
 
-          <Tooltip title="Previous page">
+          <Tooltip title="Página anterior">
             <IconButton>
               <Iconify icon="eva:arrow-ios-forward-fill" />
             </IconButton>

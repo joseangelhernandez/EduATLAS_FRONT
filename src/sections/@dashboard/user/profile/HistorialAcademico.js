@@ -4,22 +4,22 @@ import { Helmet } from 'react-helmet-async';
 import { alpha } from '@mui/material/styles';
 import { Box, Stack, Button, Typography, IconButton, InputAdornment } from '@mui/material';
 // hooks
-import useCountdown from '../hooks/useCountdown';
+import useCountdown from '../../../../hooks/useCountdown';
 // _mock
-import { _socials } from '../_mock/arrays';
+import { _socials } from '../../../../_mock/arrays';
 // components
-import Iconify from '../components/iconify';
-import { CustomTextField } from '../components/custom-input';
+import Iconify from '../../../../components/iconify';
+import { CustomTextField } from '../../../../components/custom-input';
 // assets
-import { ComingSoonIllustration } from '../assets/illustrations';
+import { ComingSoonIllustration } from '../../../../assets/illustrations';
 
 // ----------------------------------------------------------------------
 
-export default function ComingSoonPage() {
+export default function HistorialAcademico() {
   const { days, hours, minutes, seconds } = useCountdown(new Date('07/07/2024 08:00'));
 
   return (
-    <>
+    <Stack pt={10} pl={5} pr={5}>
       <Helmet>
         <title> Muy pronto | EduATLAS</title>
       </Helmet>
@@ -80,7 +80,7 @@ export default function ComingSoonPage() {
           </IconButton>
         ))}
       </Stack>
-    </>
+    </Stack>
   );
 }
 

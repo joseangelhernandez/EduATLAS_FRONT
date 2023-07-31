@@ -39,7 +39,7 @@ export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient
       {...other}
     >
       <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>
-        To:
+        Ir a:
       </Typography>
 
       <Autocomplete

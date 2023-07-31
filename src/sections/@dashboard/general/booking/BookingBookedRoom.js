@@ -25,8 +25,8 @@ export default function BookingBookedRoom({ title, subheader, data, ...other }) 
             key={progress.status}
             value={progress.value}
             color={
-              (progress.status === 'Pending' && 'warning') ||
-              (progress.status === 'Cancel' && 'error') ||
+              (progress.status === 'En proceso' && 'warning') ||
+              (progress.status === 'Cambios' && 'error') ||
               'success'
             }
             sx={{ height: 8, bgcolor: (theme) => alpha(theme.palette.grey[500], 0.16) }}
@@ -44,8 +44,8 @@ export default function BookingBookedRoom({ title, subheader, data, ...other }) 
                   height: 12,
                   borderRadius: 0.5,
                   bgcolor: 'success.main',
-                  ...(progress.status === 'Pending' && { bgcolor: 'warning.main' }),
-                  ...(progress.status === 'Cancel' && { bgcolor: 'error.main' }),
+                  ...(progress.status === 'En proceso' && { bgcolor: 'warning.main' }),
+                  ...(progress.status === 'Cambios' && { bgcolor: 'error.main' }),
                 }}
               />
 

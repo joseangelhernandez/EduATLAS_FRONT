@@ -53,7 +53,7 @@ export default function KanbanColumnAdd() {
           <TextField
             autoFocus
             fullWidth
-            placeholder="New section"
+            placeholder="Nueva sección"
             value={name}
             onChange={handleChangeName}
             onKeyUp={handleKeyUp}
@@ -71,7 +71,7 @@ export default function KanbanColumnAdd() {
           startIcon={<Iconify icon="eva:plus-fill" />}
           onClick={handleOpen}
         >
-          Add section
+          Agregar sección
         </Button>
       )}
     </Paper>

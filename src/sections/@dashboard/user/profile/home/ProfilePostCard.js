@@ -197,7 +197,7 @@ export default function ProfilePostCard({ post }) {
           fullWidth
           value={message}
           inputRef={commentInputRef}
-          placeholder="Write a comment…"
+          placeholder="Comentar..."
           onChange={(event) => handleChangeMessage(event.target.value)}
           endAdornment={
             <InputAdornment position="end" sx={{ mr: 1 }}>

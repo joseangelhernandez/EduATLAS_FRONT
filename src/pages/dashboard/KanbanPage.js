@@ -100,18 +100,18 @@ export default function KanbanPage() {
   return (
     <>
       <Helmet>
-        <title> Kanban | Minimal UI</title>
+        <title> Gestión de asignaciones | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={false} sx={{ height: 1 }}>
         <CustomBreadcrumbs
-          heading="Kanban"
+          heading="Gestion de tareas - Kanban"
           links={[
             {
               name: 'Dashboard',
               href: PATH_DASHBOARD.root,
             },
-            { name: 'Kanban' },
+            { name: 'Gestión de tareas' },
           ]}
         />
         <DragDropContext onDragEnd={onDragEnd}>

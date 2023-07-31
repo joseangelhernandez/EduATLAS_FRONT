@@ -17,12 +17,12 @@ export default function BlogNewPostPage() {
   return (
     <>
       <Helmet>
-        <title> Blog: New Post | Minimal UI</title>
+        <title> Entradas: Nueva | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Create a new post"
+          heading="Crear una nueva entrada"
           links={[
             {
               name: 'Dashboard',
@@ -33,7 +33,7 @@ export default function BlogNewPostPage() {
               href: PATH_DASHBOARD.blog.root,
             },
             {
-              name: 'Create',
+              name: 'Crear',
             },
           ]}
         />

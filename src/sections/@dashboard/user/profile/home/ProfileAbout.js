@@ -29,7 +29,7 @@ ProfileAbout.propTypes = {
 export default function ProfileAbout({ quote, country, email, role, company, school }) {
   return (
     <Card>
-      <CardHeader title="About" />
+      <CardHeader title="Información general" />
 
       <Stack spacing={2} sx={{ p: 3 }}>
         <Typography variant="body2">{quote}</Typography>
@@ -38,25 +38,25 @@ export default function ProfileAbout({ quote, country, email, role, company, sch
           <StyledIcon icon="eva:pin-fill" />
 
           <Typography variant="body2">
-            Live at &nbsp;
+            Estudia en &nbsp;
             <Link component="span" variant="subtitle2" color="text.primary">
-              {country}
+              INSTITUTO POLITÉCNICO LOYOLA
             </Link>
           </Typography>
         </Stack>
 
         <Stack direction="row">
           <StyledIcon icon="eva:email-fill" />
-          <Typography variant="body2">{email}</Typography>
+          <Typography variant="body2">usuario@correo.com.do</Typography>
         </Stack>
 
         <Stack direction="row">
           <StyledIcon icon="ic:round-business-center" />
 
           <Typography variant="body2">
-            {role} at &nbsp;
+            Última participación en &nbsp;
             <Link component="span" variant="subtitle2" color="text.primary">
-              {company}
+              Olimpiada de Programación 2023 MINERD
             </Link>
           </Typography>
         </Stack>
@@ -65,9 +65,9 @@ export default function ProfileAbout({ quote, country, email, role, company, sch
           <StyledIcon icon="ic:round-business-center" />
 
           <Typography variant="body2">
-            Studied at &nbsp;
+            Fortaleza &nbsp;
             <Link component="span" variant="subtitle2" color="text.primary">
-              {school}
+              STEM
             </Link>
           </Typography>
         </Stack>

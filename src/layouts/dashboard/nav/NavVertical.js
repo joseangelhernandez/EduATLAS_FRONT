@@ -71,7 +71,6 @@ export default function NavVertical({ openNav, onCloseNav }) {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <NavDocs />
     </Scrollbar>
   );
 

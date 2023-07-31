@@ -99,14 +99,14 @@ export default function UserCard({ user }) {
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" sx={{ py: 3 }}>
         <div>
           <Typography variant="caption" component="div" sx={{ mb: 0.75, color: 'text.disabled' }}>
-            Follower
+            Compañeros/as
           </Typography>
           <Typography variant="subtitle1">{fShortenNumber(follower)}</Typography>
         </div>
 
         <div>
           <Typography variant="caption" component="div" sx={{ mb: 0.75, color: 'text.disabled' }}>
-            Following
+            Amigos/as
           </Typography>
 
           <Typography variant="subtitle1">{fShortenNumber(following)}</Typography>
@@ -114,9 +114,9 @@ export default function UserCard({ user }) {
 
         <div>
           <Typography variant="caption" component="div" sx={{ mb: 0.75, color: 'text.disabled' }}>
-            Total Post
+            Índice de liderazgo
           </Typography>
-          <Typography variant="subtitle1">{fShortenNumber(totalPosts)}</Typography>
+          <Typography variant="subtitle1" color="#29C300">{fShortenNumber(totalPosts)}</Typography>
         </div>
       </Box>
     </Card>

@@ -4,6 +4,7 @@ import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import timelinePlugin from '@fullcalendar/timeline';
+import esLocale from '@fullcalendar/core/locales/es'
 //
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -194,10 +195,10 @@ export default function CalendarPage() {
   const handleCreateUpdateEvent = (newEvent) => {
     if (selectedEventId) {
       dispatch(updateEvent(selectedEventId, newEvent));
-      enqueueSnackbar('Update success!');
+      enqueueSnackbar('Actividad actualizada con éxito');
     } else {
       dispatch(createEvent(newEvent));
-      enqueueSnackbar('Create success!');
+      enqueueSnackbar('Actividad agregada con éxito');
     }
   };
 
@@ -206,7 +207,7 @@ export default function CalendarPage() {
       if (selectedEventId) {
         handleCloseModal();
         dispatch(deleteEvent(selectedEventId));
-        enqueueSnackbar('Delete success!');
+        enqueueSnackbar('Actividad eliminada con éxito');
       }
     } catch (error) {
       console.error(error);
@@ -243,29 +244,28 @@ export default function CalendarPage() {
   return (
     <>
       <Helmet>
-        <title> Calendar | Minimal UI</title>
+        <title> Calendario escolar | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <CustomBreadcrumbs
-          heading="Calendar"
+          heading="Calendario"
           links={[
             {
               name: 'Dashboard',
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Calendar',
+              name: 'Calendario escolar',
             },
           ]}
-          moreLink={['https://fullcalendar.io/docs/react']}
           action={
             <Button
               variant="contained"
               startIcon={<Iconify icon="eva:plus-fill" />}
               onClick={handleOpenModal}
             >
-              New Event
+              Nueva actividad
             </Button>
           }
         />
@@ -283,6 +283,7 @@ export default function CalendarPage() {
             />
 
             <FullCalendar
+              locale={esLocale}
               weekends
               editable
               droppable
@@ -316,7 +317,7 @@ export default function CalendarPage() {
       </Container>
 
       <Dialog fullWidth maxWidth="xs" open={openForm} onClose={handleCloseModal}>
-        <DialogTitle>{selectedEvent ? 'Edit Event' : 'Add Event'}</DialogTitle>
+        <DialogTitle>{selectedEvent ? 'Editar actividad' : 'Añadir actividad'}</DialogTitle>
 
         <CalendarForm
           event={selectedEvent}

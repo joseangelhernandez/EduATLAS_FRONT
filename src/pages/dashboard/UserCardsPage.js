@@ -19,16 +19,16 @@ export default function UserCardsPage() {
   return (
     <>
       <Helmet>
-        <title> User: Cards | Minimal UI</title>
+        <title> Personas | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="User Cards"
+          heading="Estudiantes"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'User', href: PATH_DASHBOARD.user.root },
-            { name: 'Cards' },
+            { name: 'Usuarios', href: PATH_DASHBOARD.user.root },
+            { name: 'Estudiantes' },
           ]}
         />
 

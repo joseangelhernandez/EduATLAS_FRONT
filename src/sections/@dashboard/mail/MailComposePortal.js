@@ -73,7 +73,7 @@ export default function MailComposePortal({ onCloseCompose }) {
           }}
         >
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            New Message
+            Nuevo mensaje
           </Typography>
 
           <IconButton onClick={() => setFullScreen(!fullScreen)}>
@@ -87,11 +87,11 @@ export default function MailComposePortal({ onCloseCompose }) {
 
         <Divider />
 
-        <InputBase placeholder="To" sx={{ px: 2, height: 40 }} />
+        <InputBase placeholder="Para" sx={{ px: 2, height: 40 }} />
 
         <Divider />
 
-        <InputBase placeholder="Subject" sx={{ px: 2, height: 40 }} />
+        <InputBase placeholder="Asunto" sx={{ px: 2, height: 40 }} />
 
         <Divider />
 
@@ -100,7 +100,7 @@ export default function MailComposePortal({ onCloseCompose }) {
           id="compose-mail"
           value={message}
           onChange={handleChangeMessage}
-          placeholder="Type a message"
+          placeholder="Escriba su mensaje"
           sx={{ flexGrow: 1, borderColor: 'transparent' }}
         />
 
@@ -108,7 +108,7 @@ export default function MailComposePortal({ onCloseCompose }) {
 
         <Stack direction="row" alignItems="center" sx={{ py: 2, px: 3 }}>
           <Button variant="contained" sx={{ mr: 2 }}>
-            Send
+            Enviar
           </Button>
 
           <IconButton>

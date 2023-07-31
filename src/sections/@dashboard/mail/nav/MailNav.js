@@ -60,7 +60,7 @@ export default function MailNav({ items, openNav, onOpenCompose, onCloseNav }) {
             },
           }}
         >
-          Compose
+          Escribir
         </Button>
       </Stack>
 

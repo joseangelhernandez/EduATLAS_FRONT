@@ -308,7 +308,7 @@ export default function ActividadesListPage() {
   return (
     <>
       <Helmet>
-        <title> Actividades: Cronograma | SIGEL</title>
+        <title> Cronograma | EduATLAS</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

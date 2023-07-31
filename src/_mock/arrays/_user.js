@@ -7,19 +7,20 @@ export const _userAbout = {
   id: _mock.id(1),
   cover: _mock.image.cover(1),
   role: 'UI Designer',
-  follower: randomNumberRange(999, 99999),
-  following: randomNumberRange(999, 99999),
+  follower: randomNumberRange(9, 30),
+  following: randomNumberRange(9, 99),
+  liderazgo: randomNumberRange(9.999, 99.999),
   quote:
-    'Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..',
+    'Intereses en matemáticas y ciencias de la computación, ingeniería en Inteligencia Artificial en camino.',
   country: _mock.address.country(1),
   email: _mock.email(1),
   company: _mock.company(1),
   school: _mock.company(2),
   socialLinks: {
-    facebookLink: `https://www.facebook.com/caitlyn.kerluke`,
-    instagramLink: `https://www.instagram.com/caitlyn.kerluke`,
-    linkedinLink: `https://www.linkedin.com/in/caitlyn.kerluke`,
-    twitterLink: `https://www.twitter.com/caitlyn.kerluke`,
+    facebookLink: `https://www.facebook.com/alguien`,
+    instagramLink: `https://www.instagram.com/alguien`,
+    linkedinLink: `https://www.linkedin.com/in/alguien`,
+    twitterLink: `https://www.twitter.com/alguien`,
   },
 };
 
@@ -45,19 +46,83 @@ export const _userGallery = [...Array(12)].map((_, index) => ({
   imageUrl: _mock.image.cover(index),
 }));
 
+export const _userDocs = [
+  {
+    id: 1,
+    title: 'Acta de Nacimiento para Fines Escolares',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_2.jpg`,
+  },
+  {
+    id: 2,
+    title: 'Certificado Médico',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_2.jpg`,
+  },
+  {
+    id: 3,
+    title: 'Foto 2x2',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_2.jpg`,
+  },
+  {
+    id: 4,
+    title: 'Tarjeta de vacunas',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_2.jpg`,
+  },
+];
+
+export const _userCerts = [
+  {
+    id: 1,
+    title: 'Certificado de Modelo de Naciones Unidas de Centro Educativo',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_3.jpg`,
+  },
+  {
+    id: 2,
+    title: 'Certificado de Excelencia Académica',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_3.jpg`,
+  },
+  {
+    id: 3,
+    title: 'Certificado de Microsoft Office',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_3.jpg`,
+  },
+  {
+    id: 4,
+    title: 'Certificado de Primeros Auxilios',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_3.jpg`,
+  },
+  {
+    id: 5,
+    title: 'Certificado de Primer Lugar Olimpiada de Programación',
+    postAt: new Date(),
+    imageUrl: `https://api-dev-minimal-v4.vercel.app/assets/images/covers/cover_3.jpg`,
+  },
+];
+
 export const _userFeeds = [...Array(3)].map((_, index) => ({
   id: _mock.id(index),
   author: {
     id: _mock.id(8),
     avatarUrl: _mock.image.avatar(1),
-    name: 'Caitlyn Kerluke',
+    name: _mock.name.fullName(index, ['Juan', 'Carlos', 'Ana', 'Maria', 'Luis']),
   },
   isLiked: true,
   createdAt: _mock.time(index),
   media: _mock.image.cover(index),
-  message: _mock.text.sentence(index),
+  message: _mock.text.sentence(index, [
+    "La educación ha mejorado notablemente en los últimos años.",
+    "El desarrollo de habilidades STEM está impactando positivamente a nuestros estudiantes.",
+    "La inversión en educación está dando sus frutos en nuestra comunidad."
+  ]),
   personLikes: [...Array(36)].map((__, personIndex) => ({
-    name: _mock.name.fullName(personIndex),
+    name: _mock.name.fullName(personIndex, ['Pedro', 'Jose', 'Carmen', 'Rosa', 'Miguel']),
     avatarUrl: _mock.image.avatar(personIndex + 2),
   })),
   comments: (index === 2 && []) || [
@@ -66,21 +131,21 @@ export const _userFeeds = [...Array(3)].map((_, index) => ({
       author: {
         id: _mock.id(8),
         avatarUrl: _mock.image.avatar(randomInArray([2, 3, 4, 5, 6]) || 2),
-        name: _mock.name.fullName(index + 5),
+        name: _mock.name.fullName(index + 5, ['Andres', 'Julia', 'Ramon', 'Teresa', 'Diego']),
       },
       createdAt: _mock.time(2),
-      message: 'Praesent venenatis metus at',
+      message: 'Estoy impresionado con los avances en educación en nuestra región.',
     },
     {
       id: _mock.id(9),
       author: {
         id: _mock.id(10),
         avatarUrl: _mock.image.avatar(randomInArray([7, 8, 9, 10, 11]) || 7),
-        name: _mock.name.fullName(index + 6),
+        name: _mock.name.fullName(index + 6, ['Antonio', 'Isabel', 'Hector', 'Carolina', 'Fernando']),
       },
       createdAt: _mock.time(3),
       message:
-        'Etiam rhoncus. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed lectus.',
+        'El enfoque en las habilidades de ciencia, tecnología, ingeniería y matemáticas realmente está preparando a nuestros estudiantes para el futuro.',
     },
   ],
 }));
@@ -90,9 +155,9 @@ export const _userCards = [...Array(24)].map((_, index) => ({
   avatarUrl: _mock.image.avatar(index),
   cover: _mock.image.cover(index),
   name: _mock.name.fullName(index),
-  follower: randomNumberRange(999, 99999),
-  following: randomNumberRange(999, 99999),
-  totalPosts: randomNumberRange(999, 99999),
+  follower: randomNumberRange(9, 30),
+  following: randomNumberRange(9, 99),
+  totalPosts: randomNumberRange(9.999, 99.999),
   role: _mock.role(index),
 }));
 
