@@ -61,6 +61,7 @@ export default function HomePage() {
           overflow: 'hidden',
           position: 'relative',
           bgcolor: 'background.default',
+          mb: 10
         }}
       >
         <HomeMinimal />

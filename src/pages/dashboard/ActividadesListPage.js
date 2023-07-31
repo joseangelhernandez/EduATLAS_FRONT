@@ -200,25 +200,6 @@ export default function ActividadesListPage() {
   const getPercentByStatus = (status) => (getLengthByStatus(status) / tableData.length) * 100;
 
 
-  async function handleData() {
-    const data = await fetchData();
-
-    if(data != null){
-      setTableData(data);
-    }
-
-  }
-
-  useEffect(()=>{
-    try{
-      handleData();
-    }catch(ex){
-      console.log(ex)
-    }
-    // eslint-disable-next-line
-  },[])
-
-
   const dataFiltered = applyFilter({
     inputData: tableData,
     comparator: getComparator(order, orderBy),
@@ -313,10 +294,6 @@ export default function ActividadesListPage() {
     { value: 'PASADAS', label: 'PASADAS', color: 'error', count: getLengthByStatus('PASADAS') },
     { value: 'NO EJECUTADAS', label: 'NO EJECUTADAS', color: 'default', count: getLengthByStatus('NO EJECUTADAS') },
   ];
-
-  const handleEjecutar = () =>{
-    handleData();
-  };
 
   return (
     <>
@@ -507,7 +484,6 @@ export default function ActividadesListPage() {
                         onSelectRow={() => onSelectRow(row.id)}
                         onDeleteRow={() => handleDeleteRow(row.id)}
                         onEditRow={() => handleEditRow(row.id)}
-                        onConfirmar={() => handleEjecutar()}
                       />
                     ))}
 

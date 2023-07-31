@@ -38,8 +38,6 @@ export default function HomeColorPresets() {
         <m.div variants={varFade().inDown}>
           <Options />
         </m.div>
-
-        <Content />
       </Container>
     </StyledRoot>
   );
@@ -66,64 +64,6 @@ function Description() {
         </Typography>
       </m.div>
     </Stack>
-  );
-}
-
-// ----------------------------------------------------------------------
-
-function Content() {
-  const { themeColorPresets: color } = useSettingsContext();
-
-  return (
-    <Box sx={{ position: 'relative' }}>
-      <Image disabledEffect alt="grid" src="/assets/images/home/presets_grid.png" />
-
-      <Box sx={{ position: 'absolute', top: 0 }}>
-        <m.div variants={varFade().inUp}>
-          <Image
-            disabledEffect
-            alt="screen"
-            src={`/assets/images/home/presets_screen_${color}.png`}
-          />
-        </m.div>
-      </Box>
-
-      <Box sx={{ position: 'absolute', top: 0 }}>
-        <m.div variants={varFade().inDown}>
-          <m.div animate={{ y: [0, -15, 0] }} transition={{ duration: 8, repeat: Infinity }}>
-            <Image
-              disabledEffect
-              alt="sidebar"
-              src={`/assets/images/home/presets_block_${color}.png`}
-            />
-          </m.div>
-        </m.div>
-      </Box>
-
-      <Box sx={{ position: 'absolute', top: 0 }}>
-        <m.div variants={varFade().inDown}>
-          <m.div animate={{ y: [-5, 10, -5] }} transition={{ duration: 8, repeat: Infinity }}>
-            <Image
-              disabledEffect
-              alt="sidebar"
-              src={`/assets/images/home/presets_chart_${color}.png`}
-            />
-          </m.div>
-        </m.div>
-      </Box>
-
-      <Box sx={{ position: 'absolute', top: 0 }}>
-        <m.div variants={varFade().inDown}>
-          <m.div animate={{ y: [-25, 5, -25] }} transition={{ duration: 10, repeat: Infinity }}>
-            <Image
-              disabledEffect
-              alt="sidebar"
-              src={`/assets/images/home/presets_sidebar_${color}.png`}
-            />
-          </m.div>
-        </m.div>
-      </Box>
-    </Box>
   );
 }
 
