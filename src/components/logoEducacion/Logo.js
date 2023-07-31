@@ -20,7 +20,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
       }}
       {...other}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 442">
+      <svg xmlns="http://www.w3.org/2000/svg" id="rr" viewBox="0 0 512 442" width='100%' height='100%' >
         <defs>
           <style>
             {`.cc{fill:#ffffff;}.dd{fill:#ed232a;}`}
