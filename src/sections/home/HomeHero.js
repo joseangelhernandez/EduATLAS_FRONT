@@ -191,7 +191,7 @@ function Description() {
 
       <m.div variants={varFade().in}>
         <Typography variant="body2" sx={{ textAlign: 'center' }}>
-          La plataforma que conecta, empodera y transforma a los jóvenes dominicanos del y el mañana a través de la educación.
+          La plataforma que conecta, empodera y transforma a los jóvenes dominicanos del mañana a través de la educación.
         </Typography>
       </m.div>
 
